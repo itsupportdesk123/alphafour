@@ -1,6 +1,6 @@
 # Aurelia Residences
 
-![Aurelia Residences](client/public/og-image.jpg)
+
 
 A luxury real-estate website with a scroll-driven 3D tower experience. It has two parts:
 
