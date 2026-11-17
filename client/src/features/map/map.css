@@ -1,0 +1,138 @@
+/* Warm, desaturated basemap that sits quietly under gold markers */
+.aurelia-map .leaflet-tile-pane {
+  filter: grayscale(0.85) sepia(0.35) brightness(1.04) contrast(0.92);
+}
+.aurelia-map.is-dark .leaflet-tile-pane {
+  filter: grayscale(1) invert(1) sepia(0.35) hue-rotate(185deg) brightness(0.82) contrast(0.95);
+}
+/* Own stacking context: Leaflet's panes and controls use z-index 400–1000, which would
+   otherwise paint over the fixed header (z-80) while the map scrolls under it. */
+.aurelia-map {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+  border-radius: inherit;
+}
+
+/* Always-on highlight (head office, AV Ramana Towers): navy badge with a gold label */
+.aurelia-place {
+  position: relative;
+}
+.aurelia-place__body {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: #0b1630;
+  border: 2px solid #c9a24b;
+  box-shadow: 0 8px 20px -8px rgba(11, 22, 48, 0.7);
+}
+.aurelia-place__label {
+  position: absolute;
+  left: 38px;
+  top: 6px;
+  white-space: nowrap;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: #c9a24b;
+  color: #0b1630;
+  font: 700 10px/1.4 'Manrope Variable', Manrope, system-ui, sans-serif;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.aurelia-pin {
+  position: relative;
+}
+.aurelia-pin__body {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px 999px 999px 0;
+  transform: rotate(-45deg);
+  background: #fffdf7;
+  border: 2px solid #c9a24b;
+  box-shadow: 0 10px 25px -8px rgba(11, 22, 48, 0.6);
+}
+/* Size is set inline on the <img>: Leaflet's marker-pane rule forces width: auto on images. */
+.aurelia-pin__body img {
+  transform: rotate(45deg);
+}
+.aurelia-pin__pulse {
+  position: absolute;
+  left: 2px;
+  top: 30px;
+  width: 40px;
+  height: 16px;
+  border-radius: 999px;
+  background: rgba(201, 162, 75, 0.45);
+  animation: aurelia-pin-pulse 2.4s ease-out infinite;
+}
+.aurelia-pin__label {
+  position: absolute;
+  left: 52px;
+  top: 8px;
+  white-space: nowrap;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #0b1630;
+  color: #e6d3a3;
+  font: 700 10px/1.4 'Manrope Variable', Manrope, system-ui, sans-serif;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+@keyframes aurelia-pin-pulse {
+  0% {
+    transform: scale(0.4);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+.aurelia-dot span {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: #1e3a8a;
+  border: 3px solid #fffdf7;
+  box-shadow: 0 4px 12px rgba(11, 22, 48, 0.45);
+  transition: transform 0.3s;
+}
+.aurelia-dot.is-active span {
+  background: #c9a24b;
+  transform: scale(1.35);
+}
+
+.leaflet-tooltip.aurelia-tooltip {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 12px;
+  border: 1px solid rgba(201, 162, 75, 0.4);
+  border-radius: 12px;
+  background: #0b1630;
+  color: rgba(255, 253, 247, 0.8);
+  font: 400 11px/1.4 'Manrope Variable', Manrope, system-ui, sans-serif;
+  box-shadow: 0 12px 30px -12px rgba(0, 0, 0, 0.6);
+}
+.leaflet-tooltip.aurelia-tooltip strong {
+  color: #fffdf7;
+  font-weight: 700;
+}
+.leaflet-tooltip-top.aurelia-tooltip::before {
+  border-top-color: #0b1630;
+}
+@media (prefers-reduced-motion: reduce) {
+  .aurelia-pin__pulse {
+    animation: none;
+  }
+}

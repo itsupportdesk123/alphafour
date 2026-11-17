@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /residences/*/brochure
+
+Sitemap: http://localhost:5200/sitemap.xml

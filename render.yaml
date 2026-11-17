@@ -1,0 +1,54 @@
+# Render Blueprint for the Alphafour Infrastructure Pvt Ltd API (mail & feedback service).
+# Dashboard → New → Blueprint → select this repository. Secrets are entered in the dashboard.
+services:
+  - type: web
+    name: aurelia-api
+    runtime: node
+    rootDir: server
+    plan: starter
+    buildCommand: npm ci --omit=dev
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: '20'
+      - key: CLIENT_URL
+        sync: false # e.g. https://aurelia-residences.vercel.app
+      - key: CORS_ORIGINS
+        sync: false # e.g. https://aurelia-residences.vercel.app,https://www.yourdomain.com
+      - key: MAIL_PROVIDER
+        value: smtp # smtp | office365
+      - key: MAIL_FROM_NAME
+        value: Alphafour Infrastructure Pvt Ltd
+      - key: MAIL_FROM_ADDRESS
+        sync: false
+      - key: MAIL_TEAM_TO
+        sync: false # admin inbox: it.support.enexio@gmail.com while testing, sales@alpha4infra.com when live
+      - key: MAIL_REPLY_TO
+        sync: false
+      - key: BRAND_EMAIL
+        value: sales@alpha4infra.com
+      - key: BRAND_PHONE_ALT
+        value: '+91 94442 54567'
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_PORT
+        value: '587'
+      - key: SMTP_SECURE
+        value: 'false'
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: MS365_AUTH
+        value: oauth2
+      - key: MS365_TENANT_ID
+        sync: false
+      - key: MS365_CLIENT_ID
+        sync: false
+      - key: MS365_CLIENT_SECRET
+        sync: false
+      - key: MS365_SENDER
+        sync: false

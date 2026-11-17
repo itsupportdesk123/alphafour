@@ -1,0 +1,22 @@
+{{> heading eyebrow="Enquiry received" heading=heading reference=reference}}
+<p style="margin:18px 0 0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:25px;color:#4A4438;">
+  We’re delighted you reached out{{#if residence}} about <strong style="color:#0B1630;">{{residence}}</strong>{{/if}}. A dedicated advisor from our private client team will contact you within one business day to understand what you’re looking for.
+</p>
+
+{{> details rows=details caption="Your submission details"}}
+
+{{> message text=message caption="Your message"}}
+
+<p style="margin:28px 0 10px;font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#866526;">What happens next</p>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+  <tr><td style="padding:6px 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;color:#1C1C1E;"><span style="color:#C9A24B;">&#9670;</span>&nbsp;&nbsp;A personal call from your advisor to discuss your preferences.</td></tr>
+  <tr><td style="padding:6px 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;color:#1C1C1E;"><span style="color:#C9A24B;">&#9670;</span>&nbsp;&nbsp;Pricing and availability, shared privately.</td></tr>
+  <tr><td style="padding:6px 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;color:#1C1C1E;"><span style="color:#C9A24B;">&#9670;</span>&nbsp;&nbsp;An invitation to a private viewing at a time that suits you.</td></tr>
+</table>
+
+<div style="margin:22px 0 0;">
+  {{> button href=(concat "https://wa.me/" brand.whatsapp) label="Chat on WhatsApp"}}
+  {{> button href=(concat brand.siteUrl "/residences") label="Explore projects" secondary=true}}
+</div>
+
+{{> signature brand=brand}}

@@ -1,0 +1,15 @@
+{
+  "name": "Alphafour Infrastructure Pvt Ltd",
+  "short_name": "Alphafour",
+  "description": "Ultra-luxury sea-facing residences, penthouses and villas.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1630",
+  "theme_color": "#0B1630",
+  "icons": [
+    { "src": "/assets/alphalogo-removebg-preview.png", "sizes": "80x78", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

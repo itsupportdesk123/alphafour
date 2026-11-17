@@ -1,0 +1,19 @@
+{{> heading eyebrow="Call-back requested" heading=heading reference=reference}}
+<p style="margin:18px 0 0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:25px;color:#4A4438;">
+  Thank you for your request. An advisor from Alphafour Infrastructure Pvt Ltd will call you on <strong style="color:#0B1630;">{{phone}}</strong> {{windowSentence}}.
+</p>
+
+{{> details rows=details caption="Your submission details"}}
+
+{{> message text=message caption="Your message"}}
+
+<p style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:23px;color:#4A4438;">
+  Prefer to talk right away? Our concierge desk is open every day from 10:00 to 19:00 IST.
+</p>
+
+<div style="margin:18px 0 0;">
+  {{> button href=(concat "tel:" (telHref brand.phone)) label="Call the concierge"}}
+  {{> button href=(concat "https://wa.me/" brand.whatsapp) label="WhatsApp us" secondary=true}}
+</div>
+
+{{> signature brand=brand}}

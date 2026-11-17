@@ -1,0 +1,32 @@
+# dependencies
+node_modules/
+# builds
+dist/
+build/
+coverage/
+*.tsbuildinfo
+# env
+.env
+.env.*
+!.env.example
+# logs & runtime
+*.log
+npm-debug.log*
+.mail-previews/
+server/uploads/
+# test & QA artifacts
+e2e/.artifacts/
+playwright-report/
+test-results/
+blob-report/
+# editors / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# generated build caches (hero xfade intermediate)
+.cache/
+# local backups
+.backup/

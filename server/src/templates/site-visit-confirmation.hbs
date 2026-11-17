@@ -1,0 +1,32 @@
+{{> heading eyebrow="Private viewing requested" heading=heading reference=reference}}
+<p style="margin:18px 0 0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:25px;color:#4A4438;">
+  Thank you for requesting a private viewing{{#if residence}} of <strong style="color:#0B1630;">{{residence}}</strong>{{/if}}. Your advisor will call you within four working hours to confirm the appointment.
+</p>
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:26px 0 0;border-radius:16px;border-collapse:separate;background:#0B1630;background-image:linear-gradient(160deg,#0B1630 0%,#1E3A8A 100%);">
+  <tr>
+    <td style="padding:26px 28px;">
+      <p style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#C9A24B;">Your requested slot</p>
+      <p style="margin:10px 0 0;font-family:Georgia,'Times New Roman',serif;font-size:26px;line-height:32px;color:#FFFDF7;">{{dateLabel}}</p>
+      <p style="margin:4px 0 0;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;color:#E6D3A3;">{{timeLabel}} IST &middot; {{guests}} {{guestsLabel}}</p>
+    </td>
+  </tr>
+</table>
+
+{{> details rows=details caption="Your visit details"}}
+
+{{> message text=message caption="Your notes"}}
+
+<p style="margin:0 0 10px;font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#866526;">Before you arrive</p>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+  <tr><td style="padding:6px 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;color:#1C1C1E;"><span style="color:#C9A24B;">&#9670;</span>&nbsp;&nbsp;Complimentary valet parking is available at the Experience Centre.</td></tr>
+  <tr><td style="padding:6px 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;color:#1C1C1E;"><span style="color:#C9A24B;">&#9670;</span>&nbsp;&nbsp;Please carry a photo ID for the residents’ lobby.</td></tr>
+  <tr><td style="padding:6px 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;color:#1C1C1E;"><span style="color:#C9A24B;">&#9670;</span>&nbsp;&nbsp;The attached calendar invite keeps the slot in your diary.</td></tr>
+</table>
+
+<div style="margin:22px 0 0;">
+  {{> button href=brand.mapsUrl label="Get directions"}}
+  {{> button href=(concat "https://wa.me/" brand.whatsapp) label="Reschedule on WhatsApp" secondary=true}}
+</div>
+
+{{> signature brand=brand}}

@@ -1,0 +1,22 @@
+{
+  "name": "aurelia-residences",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Aurelia Residences: luxury real estate website (React + Three.js) with a Node.js mail & feedback API",
+  "engines": {
+    "node": ">=20.11"
+  },
+  "scripts": {
+    "install:all": "npm install && npm --prefix server install && npm --prefix client install",
+    "dev": "concurrently -k -n api,web -c blue,yellow \"npm --prefix server run dev\" \"npm --prefix client run dev\"",
+    "build": "npm --prefix client run build",
+    "start": "npm --prefix server run start",
+    "lint": "npm --prefix server run lint && npm --prefix client run lint",
+    "test": "npm --prefix server test",
+    "assets:fetch": "node scripts/fetch-assets.mjs"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "sharp": "^0.34.4"
+  }
+}
