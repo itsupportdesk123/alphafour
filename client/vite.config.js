@@ -12,7 +12,6 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [react()],
     resolve: {
-      base: '/alphafour/client/',
       alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
     },
     server: {
