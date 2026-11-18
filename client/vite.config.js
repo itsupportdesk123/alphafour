@@ -6,7 +6,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
   const apiTarget = env.API_PROXY_TARGET || 'http://localhost:4083';
   // index.html reads these through %VITE_…% placeholders, so they must always be set.
-  process.env.VITE_SITE_URL = (env.VITE_SITE_URL || 'http://localhost:5203').trim().replace(/\/+$/, '');
+  process.env.VITE_SITE_URL = (env.VITE_SITE_URL || 'https://itsupportdesk123.github.io/alphafour').trim().replace(/\/+$/, '');
   process.env.VITE_INTRO_MODE = env.VITE_INTRO_MODE || 'session';
 
   return {
